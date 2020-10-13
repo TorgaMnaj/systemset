@@ -10,5 +10,5 @@ dev_install:  	## Install development dependencies and tools
 tests_bash:  	## Run bash scripts tests
 	bash ./.devbin/shtests.sh
 
-commit:  	## Deploy, test, commit changes to git and push on github
+commit:  	## Test and commit changes to git and push on github
 	bash ./.devbin/bigcommit.sh

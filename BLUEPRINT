@@ -2,4 +2,23 @@
 # Each changelog record uses same versioning naming and same test naming.
 
 --- 0.1.0:
-	.Placeholder for project planing, architecture, steps and versions.
+	Script structure. In this stage basic structure planning and folders,
+	links creation.
+
+--- 0.1.1:
+	Basic script tasks, uninstalling unneccesary aplications and installing
+	favourite applications via APT and pip3.
+
+--- 0.1.2:
+	Installing aditional applications via git, compilations and so on.
+
+--- 0.1.3:
+	Installing security applications. Securing and setting up system.
+	Installing clamscan and settup clamdtop.
+
+--- 0.1.4:
+	Tweaking and optimization of the system.
+
+--- 0.1.5:
+	Making of choosing menu. Deploy schema.
+
