@@ -18,5 +18,111 @@
 #TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 #SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+LIBPATH=./systemset_lib/
+UPAPT=update_apt.sh
+UPPIP=update_pip.sh
+REMAPT=remove_apt.sh
+INSAPT=install_apt.sh
+INSPYAPT=install_python_apt.sh
+
+
+preparation () {
+	clear
+	echo "
+
+
+
+	Kontroluji oprávnění...
+
+
+
+	"
+	if [ "$EUID" -ne 0 ]
+	then
+		echo ""
+		echo "  Skript musí běžet s oprávněním správce !  "
+		echo ""
+		echo "  Ukončuji...  "
+		echo ""
+		exit 1
+	fi
+	echo "
+
+	Běžím jako ROOT... V pořádku...
+
+	"
+
+	#
+
+	if [ ! -d ./logs/ ]
+	then
+		sudo -u $"SUDO_USER" mkdir ./logs
+	fi
+
+	LOGFILE="./logs/bigsystemscript.log"
+
+	date -u +"
+
+	%Y-%m-%d   %H:%M:%SZ
+
+	" > $LOGFILE
+}
+
+connectioncontrol() {
+  clear
+  echo "
+
+
+
+  Kontroluji připojení k internetu...
+
+
+
+  "
+  sleep 2s
+  echo ""
+  # Check the connection by downloading a file from ftp.debian.org. No disk space used.
+  if ! wget -O - http://ftp.debian.org/debian/README &> /dev/null
+  then
+    until [ "$CONT" != "" ]; do
+      echo ""
+      if ! wget -O - http://ftp.debian.org/debian/README &> /dev/null
+      then
+        clear
+        echo "  Nemáte funkční připojení k internetu!"
+        echo ""
+        echo "  Tento skript vyžaduje funkční připojení k internetu."
+        echo "  Prosím nastavte své připojení."
+        clear
+        echo "Skript byl přerušen."
+        sleep 3s
+        exit 1
+      else
+        CONT="pass"
+      fi
+    done
+  fi
+  echo "
+
+  Test připojení k internetu prošel...
+
+  "
+  sleep 1s
+  }
+
+
+(
+preparation
+connectioncontrol
+### Basics:
+sudo bash "$LIBPATH$UPAPT"
+sudo bash "$LIBPATH$UPPIP"
+sudo bash "$LIBPATH$REMAPT"
+sudo bash "$LIBPATH$INSAPT"
+sudo bash "$LIBPATH$INSPYAPT"
+
+)
+
+
 exit 0
 

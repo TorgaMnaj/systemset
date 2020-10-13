@@ -18,3 +18,6 @@ Syntax for changelog:
 --- 0.1.0 - README.md, BLUEPRINT and systemset_lib creation.
     Writen basic README.md, Created steps of development in BLUEPRINT and created systemset_lib library folder for helping scripts.
 
+--- 0.1.1 - COre tasks. Update, upgrade, remove and install apt, python and pip.
+    Created new scripts in systemset_lib for apt upgrade, pip upgrade, apt removal, apt install, pip install and python install.
+
