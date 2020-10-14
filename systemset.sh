@@ -133,13 +133,13 @@ sudo bash "$LIBPATH$REMAPT"
 sudo bash "$LIBPATH$INSAPT"
 sudo bash "$LIBPATH$INSPYAPT"
 ### Git and compilations:
-sudo bash "$INSCONK"
-sudo bash "$INSDOCK"
-sudo bash "$INSPOP"
-sudo bash "$INSPYCHARM"
-sudo bash "$INSSNAP"
-sudo bash "$INSTALIB"
-sudo bash "$INSVIRTBOX"
+sudo bash "$LIBPATH$INSCONK"
+sudo bash "$LIBPATH$INSDOCK"
+sudo bash "$LIBPATH$INSPOP"
+sudo bash "$LIBPATH$INSPYCHARM"
+sudo bash "$LIBPATH$INSSNAP"
+sudo bash "$LIBPATH$INSTALIB"
+sudo bash "$LIBPATH$INSVIRTBOX"
 )
 
 exit 0

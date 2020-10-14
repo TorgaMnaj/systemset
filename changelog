@@ -30,3 +30,6 @@ Syntax for changelog:
 --- 0.1.2.2 - Make deploy - improved.
     Improved deploy on system. Its now coppied to /usr/local/bin and /usr/local/lib/ .
 
+--- 0.1.2.3 - Repair
+    Repair.
+
