@@ -18,7 +18,17 @@
 #TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 #SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-LIBPATH=./systemset_lib/
+if [ -d ./systemset_lib/ ]
+then
+	LIBPATH=./systemset_lib/
+elif
+	[ -d ~/lib/ ]
+then
+	LIBPATH=a/lib/systemset_lib/
+else
+	exit 1
+fi
+
 UPAPT=update_apt.sh
 UPPIP=update_pip.sh
 REMAPT=remove_apt.sh

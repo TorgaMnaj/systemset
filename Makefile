@@ -12,3 +12,7 @@ tests_bash:  	## Run bash scripts tests
 
 commit:  	## Test and commit changes to git and push on github
 	bash ./.devbin/bigcommit.sh
+
+deploy:		## Deploy scripts to system.
+	bash ./systemset_lib/deploy.sh
+	
