@@ -9,3 +9,5 @@ node_modules/
 venv/
 .github
 /TODO
+logs/
+log/S

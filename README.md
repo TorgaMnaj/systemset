@@ -6,6 +6,7 @@ post installation mode as well as in update and maintanance mode.
 
 So what it does:
 
+- Deploys application via make menu to system.
 - Uninstalls unnecesary applications.
 - Installs favourite applications via APT.
 . Installs favoureite applications via SNAP.

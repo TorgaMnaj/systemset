@@ -1,14 +1,6 @@
 #!/bin/bash
 
-if [ ! -d ~/bin ]
-then
-    mkdir ~/bin
-fi
-cp -f ./systemset.sh ~/bin/systemset.sh
-if [ ! -d ~/lib ]
-then
-    mkdir ~/lib
-fi
-cp -rf ./systemset_lib ~/lib/systemset_lib
+sudo cp -f ./systemset.sh /usr/local/bin/systemset
+sudo cp -rf ./systemset_lib /usr/local/lib/
 
 exit 0

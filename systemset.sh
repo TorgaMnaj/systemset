@@ -21,12 +21,8 @@
 if [ -d ./systemset_lib/ ]
 then
 	LIBPATH=./systemset_lib/
-elif
-	[ -d ~/lib/ ]
-then
-	LIBPATH=a/lib/systemset_lib/
 else
-	exit 1
+	LIBPATH=/usr/local/lib/systemset_lib/
 fi
 
 UPAPT=update_apt.sh

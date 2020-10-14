@@ -27,3 +27,6 @@ Syntax for changelog:
 --- 0.1.2.1 - Make deploy.
     Make menu for deploying application to the system.
 
+--- 0.1.2.2 - Make deploy - improved.
+    Improved deploy on system. Its now coppied to /usr/local/bin and /usr/local/lib/ .
+
