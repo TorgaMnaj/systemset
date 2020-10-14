@@ -2,7 +2,7 @@
 
 echo "
 
-    Instaluji součásti Pythonu...
+    Installing Python packages...
 
     "
 appsToInstall=(

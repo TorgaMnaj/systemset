@@ -24,6 +24,13 @@ UPPIP=update_pip.sh
 REMAPT=remove_apt.sh
 INSAPT=install_apt.sh
 INSPYAPT=install_python_apt.sh
+INSCONK=install_conky.sh
+INSDOCK=install_docker.sh
+INSPOP=install_popshell.sh
+INSPYCHARM=install_pycharm.sh
+INSSNAP=install_snap.sh
+INSTALIB=install_talib.sh
+INSVIRTBOX=install_virtualbox.sh
 
 
 preparation () {
@@ -56,7 +63,7 @@ preparation () {
 
 	if [ ! -d ./logs/ ]
 	then
-		sudo -u $"SUDO_USER" mkdir ./logs
+		sudo -u "$SUDO_USER" mkdir ./logs
 	fi
 
 	LOGFILE="./logs/bigsystemscript.log"
@@ -110,7 +117,6 @@ connectioncontrol() {
   sleep 1s
   }
 
-
 (
 preparation
 connectioncontrol
@@ -120,9 +126,15 @@ sudo bash "$LIBPATH$UPPIP"
 sudo bash "$LIBPATH$REMAPT"
 sudo bash "$LIBPATH$INSAPT"
 sudo bash "$LIBPATH$INSPYAPT"
-
+### Git and compilations:
+sudo bash "$INSCONK"
+sudo bash "$INSDOCK"
+sudo bash "$INSPOP"
+sudo bash "$INSPYCHARM"
+sudo bash "$INSSNAP"
+sudo bash "$INSTALIB"
+sudo bash "$INSVIRTBOX"
 )
-
 
 exit 0
 

@@ -3,7 +3,7 @@
 clear
 echo "
 
-        Aktualizuji systém ...
+        System update ...
 
         "
 sudo apt-get update

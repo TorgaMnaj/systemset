@@ -2,7 +2,7 @@
 
 echo "
 
-        Aktualizuji python pip ...
+        Updating python pip ...
 
         "
 pip3 install -U pip wheel setuptools

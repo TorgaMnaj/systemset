@@ -2,7 +2,7 @@
 
 echo "
 
-    Odtraňuji nepotřebné aplikace...
+    Removing unnecessary applications...
 
 "
 appsToRemove=(

@@ -21,3 +21,9 @@ Syntax for changelog:
 --- 0.1.1 - COre tasks. Update, upgrade, remove and install apt, python and pip.
     Created new scripts in systemset_lib for apt upgrade, pip upgrade, apt removal, apt install, pip install and python install.
 
+--- 0.1.2 - Additional applications installation scripts.
+    Added scripts for installing Ta_Lib, na[A[A[B
+
+--- 0.1.2 - Made scripts for installing additional applications.
+    Added scripts for installing Ta_lib, conky, docker, popshell, snap, pycharm and virtualbox.
+

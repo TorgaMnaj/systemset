@@ -2,7 +2,7 @@
 
 echo "
 
-    Instaluji potřebné balíky...
+    Installing core applications...
 
     "
 appsToInstall=(
