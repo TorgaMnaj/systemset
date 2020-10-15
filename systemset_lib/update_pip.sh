@@ -1,10 +1,11 @@
 #!/bin/bash
-
+# TODO: Specify and study pip syntax.
 echo "
 
         Updating python pip ...
 
         "
+
 pip3 install -U pip wheel setuptools
 pip3 install setuptools --upgrade
 sudo pip install --upgrade pip

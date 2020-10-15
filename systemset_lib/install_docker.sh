@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# TODO: Zkontrolovat možnost lepší instalace.
 echo "
 
 Installing Docker...

@@ -37,6 +37,8 @@ INSPYCHARM=install_pycharm.sh
 INSSNAP=install_snap.sh
 INSTALIB=install_talib.sh
 INSVIRTBOX=install_virtualbox.sh
+CLEAN=clean.sh
+SECURE=secure.sh
 
 
 preparation () {
@@ -140,6 +142,8 @@ sudo bash "$LIBPATH$INSPYCHARM"
 sudo bash "$LIBPATH$INSSNAP"
 sudo bash "$LIBPATH$INSTALIB"
 sudo bash "$LIBPATH$INSVIRTBOX"
+sudo bash "$LIBPATH$CLEAN"
+sudo bash "$LIBPATH$SECURE"
 )
 
 exit 0

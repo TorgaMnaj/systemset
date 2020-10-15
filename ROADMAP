@@ -1,4 +1,4 @@
-# Blueprint planing contains only steps on 1.x.x and x.1.x level and not minor changes.
+# Roadmap planing contains only steps on 1.x.x and x.1.x level and not minor changes.
 # Each changelog record uses same versioning naming and same test naming.
 
 --- 0.1.0:
@@ -14,10 +14,10 @@
 
 --- 0.1.3:
 	Installing security applications. Securing and setting up system.
-	Installing clamscan and settup clamdtop.
+	Installing clamscan and settup clamdtop. Cleaning system.
 
 --- 0.1.4:
-	Tweaking and optimization of the system. Cleaning system.
+	Tweaking and optimization of the system.
 
 --- 0.1.5:
 	Making of choosing menu. Deploy schema.
@@ -27,3 +27,6 @@
 	
 --- 1.1.0:
 	Integrate downloaded scripts for tweaking system.
+
+--- 1.2.0:
+	Include scripts pro Pop OS.

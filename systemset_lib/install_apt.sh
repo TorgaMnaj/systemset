@@ -13,7 +13,7 @@ gparted gnome-disk-utility clipit notify-send htop transmission-gtk
 keepassx chromium chromium-browser libminizip1 libre2-3 gcc 
 build-essential cmake autoconf automake pkg-config libtool libzip-dev 
 libxml2-dev gnome-maps klavaro gnome-tweak-tool deja-dup uget idle bc 
-jq curl shellcheck yakuake
+jq curl shellcheck yakuake gdebi
 )
 for app in "${appsToInstall[@]}"
 do

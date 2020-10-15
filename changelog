@@ -33,3 +33,9 @@ Syntax for changelog:
 --- 0.1.2.3 - Repair
     Repair.
 
+--- 0.1.3 - Cleaning and hardening system.
+    Clamscan and security applications instalations. Hardening system and cleaning after installs and updates.
+
+--- 0.1.3 - Cleaning and hardening scripts.
+    Clamscan and system hardening. Cleaning system scripts.
+
