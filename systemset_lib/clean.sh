@@ -21,6 +21,7 @@ echo -e "$YELLOW""Removing old config files...""$ENDCOLOR"
 sudo aptitude purge -yf "$OLDCONF"
 echo -e "$YELLOW""Removing old kernels...""$ENDCOLOR"
 sudo aptitude purge -yf "$OLDKERNELS"
+sudo dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | grep -E '[0-9]+\.[0-9]+\.[0-9]+' | grep -v "$(uname -r)" | xargs sudo apt-get -y purge
 echo -e "$YELLOW""Emptying old bins...""$ENDCOLOR"
 rm -rf /home/*/.local/share/Trash/*/** &> /dev/null
 rm -rf /home/*/tmp/*/** &> /dev/null

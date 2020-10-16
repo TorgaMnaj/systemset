@@ -9,5 +9,6 @@ So what it does:
 - Deploys application via make menu to system.
 - Uninstalls unnecesary applications.
 - Installs favourite applications via APT.
-. Installs favoureite applications via SNAP.
+- Installs favourite applications via SNAP.
 - Installs added aplications and libraries.
+- Hardening and cleaning scripts.
