@@ -1,13 +1,13 @@
 #!/bin/bash
-# TODO: Nastavit scan clamscan a nastavit clamdtop.
+
 install() {
   echo "
-  Instaling security applications. 
+  Instaling security applications.
   "
   sudo apt-get install -qy --install-suggests ufw
   ##### Install software #####
   appsToInstall=(
-  clamav clamav-daemon clamscan clamtk clamfs
+  clamav clamav-daemon clamscan clamtk clamfs clamdtop
   selinux selinux-utils selinux-basics
   setools setools-gui python-setools
   lsat harden harden-doc tiger policycoreutils cryptsetup
@@ -181,7 +181,6 @@ sudo bash lynis audit system -Q
 cd ~ || exit 1
 clear
   }
-
 
 install
 firewallcheck

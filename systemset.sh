@@ -35,6 +35,7 @@ INSPYCHARM=install_pycharm.sh
 INSSNAP=install_snap.sh
 CLEAN=clean.sh
 SECURE=secure.sh
+SCAN=scanclam.sh
 # added_apps:
 INSTALIB=added_apps/install_talib.sh
 INSVIRTBOX=added_apps/install_virtualbox.sh
@@ -243,6 +244,7 @@ do
   g) Install favourite applications via SNAP
   h) Run core scripts for installation, removal and tweaking system
   i) Enter additional application install menu
+  j) Scanclam and clamdscan system
   q) Quit"
   read -r myanswer
   case $myanswer in
@@ -272,6 +274,9 @@ do
   ;;
   i|I)
   added_apps_install
+  ;;
+  j|J)
+  sudo bash "$LIBPATH$SCAN"
   ;;
   q|Q)
   break

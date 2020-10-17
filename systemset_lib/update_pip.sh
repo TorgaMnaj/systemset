@@ -1,5 +1,4 @@
 #!/bin/bash
-# TODO: Specify and study pip syntax.
 echo "
 
         Updating python pip ...
