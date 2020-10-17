@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# TODO: fix VB installation.
 echo "
 
 Installing Virtualbox...

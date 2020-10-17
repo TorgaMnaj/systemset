@@ -45,3 +45,6 @@ Syntax for changelog:
 --- 0.1.4 - First run menu.
     First run menu completely finished. Some minor changes in installations scripts.
 
+--- 0.1.4.1 - Choosing menu finished.
+    Finished main and additional choosing menu.
+

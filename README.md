@@ -7,9 +7,9 @@ in update and maintanance mode.</p>
 <p><em>So what it does:</em></p>
 
 >- Give user choices via menu:
->- Deploys application via make menu to system.
+>- Deploys scripts via make menu to system.
 >- Uninstalls unnecesary applications.
 >- Installs favourite applications via APT.
->- Installs favourite applications via SNAP.
+>- Installs favourite applications via SNAP if presented.
 >- Installs and compiles added aplications and libraries.
 >- Hardening and cleaning scripts.

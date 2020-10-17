@@ -41,32 +41,26 @@ INSVIRTBOX=added_apps/install_virtualbox.sh
 INSDOCK=added_apps/install_docker.sh
 INSPOP=added_apps/install_popshell.sh
 
-preparation () {
+final_meassage () {
 clear
 echo "
 
-Kontroluji oprávnění...
+Script has succesfully finished...
 
 "
+}
+
+preparation () {
+clear
+echo "
+Kontroluji oprávnění..."
 if [ "$EUID" -ne 0 ]
 then
-  echo "
-
-  Skript musí běžet s oprávněním správce !
-
-  "
-  echo "
-
-  Ukončuji...
-
-  "
+  echo "  Skript musí běžet s oprávněním správce !  "
+  echo "  Ukončuji...  "
   exit 1
 fi
-echo "
-
-Běžím jako ROOT... V pořádku...
-
-"
+echo "Běžím jako ROOT... V pořádku..."
 
 if [ ! -d ./logs/ ]
 then
@@ -84,10 +78,7 @@ date -u +"
 
 connectioncontrol() {
 echo "
-
-Kontroluji připojení k internetu...
-
-"
+Kontroluji připojení k internetu..."
 sleep 2s
 echo ""
 # Check the connection by downloading a file from ftp.debian.org. No disk space used.
@@ -98,21 +89,9 @@ then
     echo ""
     if ! wget -O - http://ftp.debian.org/debian/README &> /dev/null
     then
-      echo "
-
-      Nemáte funkční připojení k internetu!
-
-      "
-      echo "
-
-      Tento skript vyžaduje funkční připojení k internetu.
-
-      "
-      echo "
-
-      Skript byl přerušen.
-
-      "
+      echo "Nemáte funkční připojení k internetu!      "
+      echo "Tento skript vyžaduje funkční připojení k internetu.      "
+      echo "Skript byl přerušen."
       sleep 3s
       exit 1
     else
@@ -120,11 +99,7 @@ then
     fi
   done
 fi
-echo "
-
-Test připojení k internetu prošel...
-
-"
+echo "Test připojení k internetu prošel..."
 sleep 1s
 }
 
@@ -132,6 +107,7 @@ added_apps_install () {
 quit=false
 until "$quit"
 do
+  clear
   echo "
 
   Added applications and libraries installation:
@@ -179,7 +155,21 @@ do
 done
 }
 
-firstruncase () {
+firstrun_scripts () {
+sudo bash "$LIBPATH$UPAPT"
+sudo bash "$LIBPATH$REMAPT"
+sudo bash "$LIBPATH$INSAPT"
+sudo bash "$LIBPATH$INSPYAPT"
+sudo bash "$LIBPATH$INSCONK"
+sudo bash "$LIBPATH$INSPYCHARM"
+sudo bash "$LIBPATH$INSSNAP"
+sudo bash "$LIBPATH$CLEAN"
+sudo bash "$LIBPATH$SECURE"
+sudo bash "$LIBPATH$UPAPT"
+sudo bash "$LIBPATH$UPPIP"
+}
+
+firstrun_case () {
 if [[ ! -e /home/"$SUDO_USER"/.firstrun ]]
 then
   while true
@@ -194,17 +184,7 @@ then
     read -r answ
     case $answ in
     y|Y)
-      sudo bash "$LIBPATH$UPAPT"
-      sudo bash "$LIBPATH$REMAPT"
-      sudo bash "$LIBPATH$INSAPT"
-      sudo bash "$LIBPATH$INSPYAPT"
-      sudo bash "$LIBPATH$INSCONK"
-      sudo bash "$LIBPATH$INSPYCHARM"
-      sudo bash "$LIBPATH$INSSNAP"
-      sudo bash "$LIBPATH$CLEAN"
-      sudo bash "$LIBPATH$SECURE"
-      sudo bash "$LIBPATH$UPAPT"
-      sudo bash "$LIBPATH$UPPIP"
+      firstrun_scripts
       touch /home/"$SUDO_USER"/.firstrun && chmod -f 000 /home/"$SUDO_USER"/.firstrun && chown -f "$SUDO_USER" \
       /home/"$SUDO_USER"/.firstrun
       clear
@@ -232,7 +212,8 @@ then
           ;;
         esac
       done
-      break
+      final_meassage
+      exit 0
       ;;
     n|N)
       :
@@ -247,13 +228,72 @@ then
 fi
 }
 
+run_case () {
+while true
+do
+  clear
+  echo "
+  Choose action:
+  a) Update system
+  b) Update python pip and pip3
+  c) Clean system
+  d) Secure system
+  e) Remove unnecesary applications
+  f) Install favourite applications via APT
+  g) Install favourite applications via SNAP
+  h) Run core scripts for installation, removal and tweaking system
+  i) Enter additional application install menu
+  q) Quit"
+  read -r myanswer
+  case $myanswer in
+  a|A)
+  sudo bash "$LIBPATH$UPAPT"
+  ;;
+  b|B)
+  sudo bash "$LIBPATH$UPPIP"
+  ;;
+  c|C)
+  sudo bash "$LIBPATH$CLEAN"
+  ;;
+  d|D)
+  sudo bash "$LIBPATH$SECURE"
+  ;;
+  e|E)
+  sudo bash "$LIBPATH$REMAPT"
+  ;;
+  f|F)
+  sudo bash "$LIBPATH$INSAPT"
+  ;;
+  g|G)
+  sudo bash "$LIBPATH$INSSNAP"
+  ;;
+  h|H)
+  firstrun_scripts
+  ;;
+  i|I)
+  added_apps_install
+  ;;
+  q|Q)
+  break
+  ;;
+  *)
+  echo "
+
+  Whong choise. Again."
+  ;;
+  esac
+
+done
+}
+
+
 #Execution:
 
 clear
 preparation
 connectioncontrol
-firstruncase
-added_apps_install
+firstrun_case
+run_case
 #(
 #### Basics:
 #sudo bash "$LIBPATH$UPAPT"
@@ -272,11 +312,6 @@ added_apps_install
 #sudo bash "$LIBPATH$CLEAN"
 #sudo bash "$LIBPATH$SECURE"
 #)
-clear
-echo "
-
-Script has succesfully finished...
-
-"
+final_meassage
 exit 0
 
