@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# TODO: Zkontrolovat zda je nainstalováno gnome a není přítomno pop shell,
+# TODO: Vyřešit nedodělávku při kompilaci pop shell.
 echo "
 
 Installing Pop shell...

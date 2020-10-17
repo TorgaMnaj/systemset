@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# TODO: Lépe zkontrolovat že talib není nainstalována.
 echo "
 
 Installing Talib...
