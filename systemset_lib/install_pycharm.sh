@@ -5,7 +5,7 @@ PYCHARMV=https://download-cf.jetbrains.com/python/pycharm-community-2020.2.3.tar
 if [ -d /opt/pycharm ]
 then
   echo "
-  Pycharm je již nainstalován..."
+  Pycharm is already installed..."
     exit 0
 fi
 echo "

@@ -22,9 +22,10 @@ if [ -d ./systemset_lib/ ]
 then
 	LIBPATH=./systemset_lib/
 else
-	LIBPATH=/usr/local/lib/systemset_lib/
+	LIBPATH=/home/"$SUDO_USER"/lib/systemset_lib/
 fi
 
+# core_apps
 UPAPT=update_apt.sh
 UPPIP=update_pip.sh
 REMAPT=remove_apt.sh
@@ -54,14 +55,14 @@ Script has succesfully finished...
 preparation () {
 clear
 echo "
-Kontroluji oprávnění..."
+Checking permissions..."
 if [ "$EUID" -ne 0 ]
 then
-  echo "  Skript musí běžet s oprávněním správce !  "
-  echo "  Ukončuji...  "
+  echo "  Script must run with root privilages !  "
+  echo "  Terminating...  "
   exit 1
 fi
-echo "Běžím jako ROOT... V pořádku..."
+echo "Running as root... OK..."
 
 if [ ! -d ./logs/ ]
 then
@@ -79,7 +80,7 @@ date -u +"
 
 connectioncontrol() {
 echo "
-Kontroluji připojení k internetu..."
+Checking internet connection..."
 sleep 2s
 echo ""
 # Check the connection by downloading a file from ftp.debian.org. No disk space used.
@@ -90,9 +91,9 @@ then
     echo ""
     if ! wget -O - http://ftp.debian.org/debian/README &> /dev/null
     then
-      echo "Nemáte funkční připojení k internetu!      "
-      echo "Tento skript vyžaduje funkční připojení k internetu.      "
-      echo "Skript byl přerušen."
+      echo "You dont have working internet connection!      "
+      echo "This script requires working internet connection.      "
+      echo "Terminating."
       sleep 3s
       exit 1
     else
@@ -100,7 +101,7 @@ then
     fi
   done
 fi
-echo "Test připojení k internetu prošel..."
+echo "Test for working internet connection has passed..."
 sleep 1s
 }
 
@@ -168,6 +169,7 @@ sudo bash "$LIBPATH$CLEAN"
 sudo bash "$LIBPATH$SECURE"
 sudo bash "$LIBPATH$UPAPT"
 sudo bash "$LIBPATH$UPPIP"
+sudo bash "$LIBPATH$INSPOP"
 }
 
 firstrun_case () {
@@ -299,24 +301,7 @@ preparation
 connectioncontrol
 firstrun_case
 run_case
-#(
-#### Basics:
-#sudo bash "$LIBPATH$UPAPT"
-#sudo bash "$LIBPATH$UPPIP"
-#sudo bash "$LIBPATH$REMAPT"
-#sudo bash "$LIBPATH$INSAPT"
-#sudo bash "$LIBPATH$INSPYAPT"
-#### Git and compilations:
-#sudo bash "$LIBPATH$INSCONK"
-#sudo bash "$LIBPATH$INSDOCK"
-#sudo bash "$LIBPATH$INSPOP"
-#sudo bash "$LIBPATH$INSPYCHARM"
-#sudo bash "$LIBPATH$INSSNAP"
-#sudo bash "$LIBPATH$INSTALIB"
-#sudo bash "$LIBPATH$INSVIRTBOX"
-#sudo bash "$LIBPATH$CLEAN"
-#sudo bash "$LIBPATH$SECURE"
-#)
+
 final_meassage
 exit 0
 

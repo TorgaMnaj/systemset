@@ -13,3 +13,4 @@ in update and maintanance mode.</p>
 >- Installs favourite applications via SNAP if presented.
 >- Installs and compiles added aplications and libraries.
 >- Hardening and cleaning scripts.
+>- Scans system with clamscan and clamdscan.
