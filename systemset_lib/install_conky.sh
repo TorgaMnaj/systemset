@@ -1,5 +1,6 @@
 #!/bin/bash
-
+LOGFILE=/home/jan/.logs/systemset.log
+(
 if ! command -V conky &> /dev/null
 then
   echo "
@@ -18,5 +19,6 @@ else
 
   "
 fi
+)  2>> "$LOGFILE"
 
 exit 0

@@ -1,5 +1,7 @@
 #!/bin/bash
+LOGFILE=/home/jan/.logs/systemset.log
 
+(
 if command -V snap
 then
   echo "
@@ -13,5 +15,6 @@ then
   sudo snap install colibri
   sudo snap install fromscratch
 fi
+)  2>> "$LOGFILE"
 
 exit 0

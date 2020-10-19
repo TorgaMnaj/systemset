@@ -1,5 +1,7 @@
 #!/bin/bash
+LOGFILE=/home/jan/.logs/systemset.log
 
+(
 if [[ $(command -v docker) ]]
 then
   echo "
@@ -38,7 +40,8 @@ else
   sudo rm -rf ./docker
   sudo apt-get update
   sudo groupadd docker
-  sudo usermod -aG docker "$SUDO_USER"
+  sudo usermod -aG docker jan
 fi
+)  2>> "$LOGFILE"
 
 exit 0

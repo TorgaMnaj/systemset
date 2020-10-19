@@ -22,8 +22,20 @@ if [ -d ./systemset_lib/ ]
 then
 	LIBPATH=./systemset_lib/
 else
-	LIBPATH=/home/"$SUDO_USER"/lib/systemset_lib/
+	LIBPATH=/home/jan/lib/systemset_lib/
 fi
+# logs:
+if [[ ! -d /home/jan/.logs/ ]]
+then
+  mkdir /home/jan/.logs/
+fi
+sudo chown jan /home/jan/.logs/
+LOGFILE=/home/jan/.logs/systemset.log
+date -u +"
+
+%Y-%m-%d   %H:%M:%SZ
+
+" > "$LOGFILE"
 
 # core_apps
 UPAPT=update_apt.sh
@@ -63,19 +75,6 @@ then
   exit 1
 fi
 echo "Running as root... OK..."
-
-if [ ! -d ./logs/ ]
-then
-  sudo -u "$SUDO_USER" mkdir ./logs
-fi
-
-LOGFILE="./logs/bigsystemscript.log"
-
-date -u +"
-
-%Y-%m-%d   %H:%M:%SZ
-
-" > $LOGFILE
 }
 
 connectioncontrol() {
@@ -155,7 +154,7 @@ do
     ;;
   esac
 done
-}
+}  2>> "$LOGFILE"
 
 firstrun_scripts () {
 sudo bash "$LIBPATH$UPAPT"
@@ -170,10 +169,11 @@ sudo bash "$LIBPATH$SECURE"
 sudo bash "$LIBPATH$UPAPT"
 sudo bash "$LIBPATH$UPPIP"
 sudo bash "$LIBPATH$INSPOP"
-}
+}  2>> "$LOGFILE"
 
 firstrun_case () {
-if [[ ! -e /home/"$SUDO_USER"/.firstrun ]]
+(
+if [[ ! -e /home/jan/.firstrun ]]
 then
   while true
   do
@@ -188,8 +188,8 @@ then
     case $answ in
     y|Y)
       firstrun_scripts
-      touch /home/"$SUDO_USER"/.firstrun && chmod -f 000 /home/"$SUDO_USER"/.firstrun && chown -f "$SUDO_USER" \
-      /home/"$SUDO_USER"/.firstrun
+      touch /home/jan/.firstrun && chmod -f 000 /home/jan/.firstrun && chown -f jan \
+      /home/jan/.firstrun
       clear
       echo "
 
@@ -229,6 +229,7 @@ then
     esac
   done
 fi
+)  2>> "$LOGFILE"
 }
 
 run_case () {
@@ -291,7 +292,7 @@ do
   esac
 
 done
-}
+}  2>> "$LOGFILE"
 
 
 #Execution:
@@ -301,6 +302,9 @@ preparation
 connectioncontrol
 firstrun_case
 run_case
+sudo chmod 755 LOGFILE
+sudo chown jan LOGFILE
+
 
 final_meassage
 exit 0

@@ -1,10 +1,12 @@
 #!/ibn/bash
-
+LOGFILE=/home/jan/.logs/systemset.log
 echo "
 
     Installing Python packages...
 
     "
+
+(
 appsToInstall=(
 python3 python3-venv python3-numpy cython3 cython3-dbg python3-distlib
 python3-dev python3-pip python3-scipy idle-python3 python3-distlib
@@ -16,5 +18,6 @@ for app in "${appsToInstall[@]}"
 do
     sudo apt-get install -qy --assume-yes "$app"
 done
+)  2>> "$LOGFILE"
 
 exit 0

@@ -1,4 +1,5 @@
 #!/bin/bash
+LOGFILE=/home/jan/.logs/systemset.log
 
 coreinstall () {
   if [[ ! -d /usr/local/lib/ta-lib ]]
@@ -26,8 +27,9 @@ coreinstall () {
     "
     sleep 2s
   fi
-   }
+   }  2>> "$LOGFILE"
 
+(
 if [[ ! -d "/usr/local/lib/python3*/dist-packages/talib" ]]
 then
     if [[ ! -d "/usr/lib/python3*/dist-packages/talib" ]]
@@ -35,5 +37,6 @@ then
         coreinstall
     fi
 fi
+)  2>> "$LOGFILE"
 
 exit 0

@@ -1,8 +1,11 @@
 #!/bin/bash
+LOGFILE=/home/jan/.logs/systemset.log
+
+(
 clear
 echo "Scanning homedir with clamdscan..."
-sudo clamdscan -m --reload --quiet /home/"$SUDO_USER"
-sudo clamdscan -m --reload --quiet /home/"$SUDO_USER"
+sudo clamdscan -m --reload --quiet /home/jan
+sudo clamdscan -m --reload --quiet /home/jan
 echo "Scanning whole system with clamscan..."
 (
 cd /
@@ -15,6 +18,6 @@ do
   fi
 done
 )
+)  2>> "$LOGFILE"
 
-sleep 3s
 exit 0
