@@ -302,8 +302,8 @@ preparation
 connectioncontrol
 firstrun_case
 run_case
-sudo chmod 755 LOGFILE
-sudo chown jan LOGFILE
+sudo chmod 755 "$LOGFILE"
+sudo chown jan "$LOGFILE"
 
 
 final_meassage

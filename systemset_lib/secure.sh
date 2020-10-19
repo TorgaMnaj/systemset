@@ -80,7 +80,7 @@ chrootkitcheck() {
   # sudo gdebi ./Nessus-6.5.3-debian6_amd64.deb
   sudo /etc/init.d/nessusd start
   clear
-) 2>> LOGFILE
+) 2>> "$LOGFILE"
 }
 
 els() {

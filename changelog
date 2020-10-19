@@ -63,3 +63,6 @@ Syntax for changelog:
 --- 1.0.0 - Release
     Release
 
+--- 1.0.1 - Improved clamscan.
+    Improved clamscan and minor repairs.
+
