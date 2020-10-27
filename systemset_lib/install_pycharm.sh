@@ -23,11 +23,7 @@ mv pycharm-* pycharm
 chown -R jan ./pycharm
 cd pycharm || exit 1
 cd bin || exit 1
-p=$(pwd)
-m=/pycharm.sh
-mm=/pycharm
-p=/usr/local/bin
-sudo ln -sf "$p$m" "$p$mm"
+sudo -u jan bash pycharm.sh
 )  2>> "$LOGFILE"
 
 exit 0
