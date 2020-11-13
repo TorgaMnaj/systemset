@@ -54,6 +54,7 @@ INSTALIB=added_apps/install_talib.sh
 INSVIRTBOX=added_apps/install_virtualbox.sh
 INSDOCK=added_apps/install_docker.sh
 INSPOP=added_apps/install_popshell.sh
+INSBASHDB=added_apps/install_bash.db
 
 final_meassage () {
 clear
@@ -116,6 +117,7 @@ do
   b) install Docker
   c) install Pop Shell
   d) install VirtualBox
+  e) install Bashdb
   q) quit
   "
   read -r lans
@@ -137,6 +139,11 @@ do
     ;;
     d|D)
     sudo bash "$LIBPATH$INSVIRTBOX"
+    clear
+    continue
+    ;;
+    e|E)
+    sudo bash "$INSBASHDB"
     clear
     continue
     ;;

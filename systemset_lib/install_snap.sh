@@ -9,7 +9,6 @@ then
   Installing Snap applications...
 
   "
-  sudo snap install beekeeper
   sudo snap install sublime-text --classic
   sudo snap install code --classic
   sudo snap install colibri
@@ -18,6 +17,7 @@ then
   sudo snap install jupyter
   sudo snap install netron
   sudo snap install dbeaver-ce
+  sudo snap install dbeaverapp
 fi
 )  2>> "$LOGFILE"
 
