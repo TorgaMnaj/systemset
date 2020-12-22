@@ -19,5 +19,5 @@ else
   Gnome is not presented. Cannot install Pop Shell...
   "
 fi
-)  2>> "$LOGFILE"
+)
 exit 0

@@ -19,6 +19,6 @@ else
 
   "
 fi
-)  2>> "$LOGFILE"
+)
 
 exit 0

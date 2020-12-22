@@ -43,6 +43,6 @@ echo -e "$YELLOW""Bleachbit...""$ENDCOLOR"
 bleachbit -c --preset
 echo -e "$YELLOW""Cleaning finished""$ENDCOLOR"
 sudo touch /forcefsck
-)  2>> "$LOGFILE"
+)
 
 exit 0

@@ -37,6 +37,6 @@ then
         coreinstall
     fi
 fi
-)  2>> "$LOGFILE"
+)
 
 exit 0

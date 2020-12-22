@@ -2,7 +2,7 @@
 LOGFILE=/home/jan/.logs/systemset.log
 
 (
-PYCHARMV=https://download-cf.jetbrains.com/python/pycharm-community-2020.2.3.tar.gz
+PYCHARMV=https://download-cf.jetbrains.com/python/pycharm-community-2020.3.1.tar.gz
 
 if [ -d /opt/pycharm ]
 then
@@ -16,15 +16,26 @@ Installing Pycharm...
 
 "
 cd /opt || exit 1
-wget $PYCHARMV
-tar -xf pycharm*
-rm -f ./*.tar.gz
+echo "
+
+Downloading Pycharm...
+
+"
+wget --progress=bar:force $PYCHARMV
+tar -xf pycharm* && rm -f ./*.tar.gz
 mv pycharm-* pycharm
 chown -R jan ./pycharm
 cd pycharm || exit 1
 cd bin || exit 1
+echo "
+
+
+Starting Pycharm - please create comand-line launcher and desktop entry under Tools window.
+
+
+"
 sudo -u jan bash pycharm.sh
-)  2>> "$LOGFILE"
+)
 
 exit 0
 

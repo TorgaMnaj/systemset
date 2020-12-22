@@ -72,3 +72,6 @@ Syntax for changelog:
 --- 1.0.3 - Added Bashdb installation.
     Added BASHDB installation to added apps menu. Some tweaks.
 
+--- 1.0.4 - Tweaks and improvements.
+    Post installation improvements on code.
+

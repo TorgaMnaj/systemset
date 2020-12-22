@@ -19,6 +19,7 @@ else
   Aborting...
 
   "
+  sleep 2s
 fi
 
 exit 0

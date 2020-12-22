@@ -28,6 +28,6 @@ if ! command -v vboxmanage &> /dev/null; then
 fi
 t=$(mktemp -d)
 wget -P "$t" "$ep_url" && yes | vboxmanage extpack install --replace "$t"/*extpack && rm -rf "$t"
-)  2>> "$LOGFILE"
+)
 
 exit 0

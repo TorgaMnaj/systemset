@@ -42,6 +42,6 @@ else
   sudo groupadd docker
   sudo usermod -aG docker jan
 fi
-)  2>> "$LOGFILE"
+)
 
 exit 0
