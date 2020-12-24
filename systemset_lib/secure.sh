@@ -1,5 +1,4 @@
 #!/bin/bash
-LOGFILE=/home/jan/.logs/systemset.log
 
 install() {
   echo "
@@ -8,7 +7,7 @@ Instaling security applications.
   sudo apt-get install -qy --install-suggests ufw
   ##### Install software #####
   appsToInstall=(
-    clamav clamav-daemon clamscan clamtk clamfs clamdtop
+    clamav clamav-daemon clamdscan clamscan clamtk clamfs clamdtop
     selinux selinux-utils selinux-basics
     setools setools-gui python-setools
     lsat harden harden-doc tiger policycoreutils cryptsetup

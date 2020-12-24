@@ -1,5 +1,4 @@
 #!/bin/bash
-LOGFILE=/home/jan/.logs/systemset.log
 (
 if ! command -V conky &> /dev/null
 then
@@ -8,10 +7,10 @@ then
   Installing Conky...
 
   "
-  sudo add-apt-repository ppa:linuxmint-tr/araclar
+  # TODO: odstranit tento modul.
   sudo apt update
   sudo apt upgrade
-  sudo apt install -yfm conky conky-all conky-manager conky-manager-extra
+  sudo apt install -yfm conky conky-all
 else
   echo "
 

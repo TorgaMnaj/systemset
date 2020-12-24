@@ -1,6 +1,5 @@
-
+ --- Change robust busy applications installed via apt to compiled applications.
  --- Before adding PPA ask if its not presented already.
- --- For logging in subscripts we have to pass logging file to them as an argument - to be able to use $SUDO_USER
-     and not hard coded name. Since sub scripts are ran from main script which is sudo itself, $SUDO_USER in subscripts
-     is always "ROOT".
- --- Log via named FIFO
+ --- Logging via named FIFO.
+ --- Instalace a užití aplikací na lazení systému.
+ --- Přeinstalace zkompilovaných aplikací.

@@ -75,3 +75,6 @@ Syntax for changelog:
 --- 1.0.4 - Tweaks and improvements.
     Post installation improvements on code.
 
+--- 1.1.0 - Tweaks, new scripts, improvements.
+    All scripts are improved and logging was deleted for now. New scripts.
+

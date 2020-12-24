@@ -1,5 +1,4 @@
 #!/bin/bash
-LOGFILE=/home/jan/.logs/systemset.log
 echo "
 
         Updating python pip ...

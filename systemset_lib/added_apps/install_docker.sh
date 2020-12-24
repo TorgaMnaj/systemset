@@ -1,5 +1,4 @@
 #!/bin/bash
-LOGFILE=/home/jan/.logs/systemset.log
 
 (
 if [[ $(command -v docker) ]]
@@ -20,7 +19,7 @@ else
     curl \
     gnupg2 \
     software-properties-common
-  cd /tmp || exit 1
+  cd /opt || exit 1
   mkdir docker
   cd docker || exit 1
   echo "

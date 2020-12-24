@@ -1,5 +1,4 @@
 #!/bin/bash
-LOGFILE=/home/jan/.logs/systemset.log
 
 (
 if command -V snap
@@ -46,6 +45,11 @@ then
   Installing dbeaver...
   "
   sudo snap install dbeaver-ce
+
+  echo "
+  Installing android-studio...
+  "
+  sudo snap install android-studio
 fi
 )
 

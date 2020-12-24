@@ -22,8 +22,15 @@ if [ -d ./systemset_lib/ ]
 then
 	LIBPATH=./systemset_lib/
 else
-	LIBPATH=/home/jan/lib/systemset_lib/
+  if [ -d /home/jan/lib/systemset_lib/ ]
+	then
+	  LIBPATH=/home/jan/lib/systemset_lib/
+	else
+	  echo -e "Systemset_lib is missing! \nTerminating...\n"
+	  exit 1
+	fi
 fi
+
 # logs:
 if [[ ! -d /home/jan/.logs/ ]]
 then
@@ -37,13 +44,13 @@ date -u +"
 
 " > "$LOGFILE"
 
+
 # core_apps
 UPAPT=update_apt.sh
 UPPIP=update_pip.sh
 REMAPT=remove_apt.sh
 INSAPT=install_apt.sh
 INSPYAPT=install_python_apt.sh
-INSCONK=install_conky.sh
 INSPYCHARM=install_pycharm.sh
 INSSNAP=install_snap.sh
 CLEAN=clean.sh
@@ -54,7 +61,13 @@ INSTALIB=added_apps/install_talib.sh
 INSVIRTBOX=added_apps/install_virtualbox.sh
 INSDOCK=added_apps/install_docker.sh
 INSPOP=added_apps/install_popshell.sh
-INSBASHDB=added_apps/install_bash.db
+INSBASHDB=added_apps/install_bashdb.sh
+INSBASDDD=added_apps/install_ddd.sh
+# compiled apps:
+COMPILECHROMIUM=compiled_apps/chromium_compiled.sh
+COMPILEDGUAKE=compiled_apps/guake_compiled.sh
+COMPILEDVLC=compiled_apps/vlc_compiled.sh
+
 
 final_meassage () {
 clear
@@ -64,6 +77,7 @@ Script has succesfully finished...
 
 "
 }
+
 
 preparation () {
 clear
@@ -77,6 +91,7 @@ then
 fi
 echo "Running as root... OK..."
 }
+
 
 connectioncontrol() {
 echo "
@@ -105,6 +120,7 @@ echo "Test for working internet connection has passed..."
 sleep 1s
 }
 
+
 added_apps_install () {
 quit=false
 until "$quit"
@@ -118,6 +134,10 @@ do
   c) install Pop Shell
   d) install VirtualBox
   e) install Bashdb
+  f) install ddd
+  g) compile guake
+  h) compile vlc
+  i) compile chromium
   q) quit
   "
   read -r lans
@@ -147,6 +167,27 @@ do
     clear
     continue
     ;;
+    f|F)
+    sudo bash "$INSBASDDD"
+    clear
+    continue
+    ;;
+
+    g|G)
+    sudo bash "$COMPILEDGUAKE"
+    clear
+    continue
+    ;;
+    h|H)
+    sudo bash "$COMPILEDVLC"
+    clear
+    continue
+    ;;
+    i|I)
+    sudo bash "$COMPILECHROMIUM"
+    clear
+    continue
+    ;;
     q|Q)
     echo q
     quit=true
@@ -161,25 +202,31 @@ do
     ;;
   esac
 done
-}  2>> "$LOGFILE"
+}
+
 
 firstrun_scripts () {
 sudo bash "$LIBPATH$UPAPT"
 sudo bash "$LIBPATH$REMAPT"
+sudo bash "$LIBPATH$UPAPT"
 sudo bash "$LIBPATH$INSAPT"
 sudo bash "$LIBPATH$INSPYAPT"
-sudo bash "$LIBPATH$INSCONK"
-sudo bash "$LIBPATH$INSPYCHARM"
 sudo bash "$LIBPATH$INSSNAP"
-sudo bash "$LIBPATH$CLEAN"
+sudo bash "$LIBPATH$INSPYCHARM"
+sudo bash "$LIBPATH$INSPOP"
+sudo bash "$LIBPATH$INSBASHDB"
+sudo bash "$LIBPATH$INSBASDDD"
+sudo bash "$LIBPATH$COMPILECHROMIUM"
+sudo bash "$LIBPATH$COMPILEDGUAKE"
+sudo bash "$LIBPATH$COMPILEDVLC"
 sudo bash "$LIBPATH$SECURE"
 sudo bash "$LIBPATH$UPAPT"
 sudo bash "$LIBPATH$UPPIP"
-sudo bash "$LIBPATH$INSPOP"
-}  2>> "$LOGFILE"
+sudo bash "$LIBPATH$CLEAN"
+}
+
 
 firstrun_case () {
-(
 if [[ ! -e /home/jan/.firstrun ]]
 then
   while true
@@ -197,12 +244,15 @@ then
       firstrun_scripts
       touch /home/jan/.firstrun && chmod -f 000 /home/jan/.firstrun && chown -f jan \
       /home/jan/.firstrun
+      sudo sensors-detect --auto
       clear
       echo "
 
       Core applications had been succesfully installed and core tasks are done.
 
+      press ENTER
       "
+      read -r > /dev/null
       while true:
       do
         echo -e "\nWould You like to install added applications? y/n \n"
@@ -236,8 +286,8 @@ then
     esac
   done
 fi
-)  2>> "$LOGFILE"
 }
+
 
 run_case () {
 while true
@@ -299,7 +349,7 @@ do
   esac
 
 done
-}  2>> "$LOGFILE"
+}
 
 
 #Execution:
@@ -315,4 +365,3 @@ sudo chown jan "$LOGFILE"
 
 final_meassage
 exit 0
-

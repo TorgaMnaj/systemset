@@ -1,14 +1,12 @@
 #!/bin/bash
-LOGFILE=/home/jan/.logs/systemset.log
 
-(
 PYCHARMV=https://download-cf.jetbrains.com/python/pycharm-community-2020.3.1.tar.gz
-
 if [ -d /opt/pycharm ]
 then
   echo "
+
   Pycharm is already installed..."
-    exit 0
+  exit 0
 fi
 echo "
 
@@ -27,15 +25,18 @@ mv pycharm-* pycharm
 chown -R jan ./pycharm
 cd pycharm || exit 1
 cd bin || exit 1
-echo "
-
+aa="
 
 Starting Pycharm - please create comand-line launcher and desktop entry under Tools window.
 
-
 "
+echo "$aa"
+notify-send "$aa"
+sleep 3s
 sudo -u jan bash pycharm.sh
-)
 
 exit 0
+
+
+
 
