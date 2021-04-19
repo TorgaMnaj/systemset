@@ -81,3 +81,6 @@ Syntax for changelog:
 --- 1.1.1 - Tweaks and ulozto-downloader
     Minor tweaks and ulozto-downloader script added.
 
+--- 1.1.2 - ulozo_downloader included in menu
+    Ulozto_downloader included in menu
+

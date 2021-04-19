@@ -63,10 +63,11 @@ INSDOCK=added_apps/install_docker.sh
 INSPOP=added_apps/install_popshell.sh
 INSBASHDB=added_apps/install_bashdb.sh
 INSBASDDD=added_apps/install_ddd.sh
+INSULOZTO=added_apps/install_ulozto_downloader.sh
 # compiled apps:
 COMPILECHROMIUM=compiled_apps/chromium_compiled.sh
-COMPILEDGUAKE=compiled_apps/guake_compiled.sh
-COMPILEDVLC=compiled_apps/vlc_compiled.sh
+COMPILEGUAKE=compiled_apps/guake_compiled.sh
+COMPILEVLC=compiled_apps/vlc_compiled.sh
 
 
 final_meassage () {
@@ -134,10 +135,11 @@ do
   c) install Pop Shell
   d) install VirtualBox
   e) install Bashdb
-  f) install ddd
-  g) compile guake
-  h) compile vlc
-  i) compile chromium
+  f) install Ddd
+  g) install Ulozto Downloader
+  h) compile Guake
+  i) compile Vlc
+  j) compile Chromium
   q) quit
   "
   read -r lans
@@ -174,16 +176,21 @@ do
     ;;
 
     g|G)
-    sudo bash "$COMPILEDGUAKE"
+    sudo bash -v "$INSULOZTO"
     clear
     continue
     ;;
     h|H)
-    sudo bash "$COMPILEDVLC"
+    sudo bash "$COMPILEGUAKE"
     clear
     continue
     ;;
     i|I)
+    sudo bash "$COMPILEVLC"
+    clear
+    continue
+    ;;
+    j|J)
     sudo bash "$COMPILECHROMIUM"
     clear
     continue
@@ -214,7 +221,7 @@ sudo bash "$LIBPATH$INSPYAPT"
 sudo bash "$LIBPATH$INSSNAP"
 sudo bash "$LIBPATH$INSPYCHARM"
 sudo bash "$LIBPATH$INSPOP"
-sudo bash "$LIBPATH$COMPILEDGUAKE"
+sudo bash "$LIBPATH$COMPILEGUAKE"
 sudo bash "$LIBPATH$SECURE"
 sudo bash "$LIBPATH$UPAPT"
 sudo bash "$LIBPATH$UPPIP"

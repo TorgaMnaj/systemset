@@ -13,7 +13,7 @@ then
   gnome-calculator gnome-calls gnome-contacts gnome-documents gnome-gmail gnome-logs
   gnome-maps gnome-phone-manager gnome-photos gnome-shell gnome-shell-extension-gsconnect
   gnome-shell-extension-gsconnect-browsers gnome-shell-extension-weather
-  gnome-system-log gnome-todo gnome-tweaks
+  gnome-system-log gnome-todo gnome-tweaks ipscan
   )
   for app in "${appsToInstall[@]}"
   do
