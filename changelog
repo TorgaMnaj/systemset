@@ -78,3 +78,6 @@ Syntax for changelog:
 --- 1.1.0 - Tweaks, new scripts, improvements.
     All scripts are improved and logging was deleted for now. New scripts.
 
+--- 1.1.1 - Tweaks and ulozto-downloader
+    Minor tweaks and ulozto-downloader script added.
+

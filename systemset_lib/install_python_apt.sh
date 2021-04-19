@@ -19,13 +19,14 @@ done
 )
 
 # pip3 install system wide pzthon3 packages
+# TODO: po firstrun nejsou přítomny tyto aplikace
 (
 appsToInstall=(
 distlib dev setuptools shutil pytest pydrive PySensors
 )
 for app in "${appsToInstall[@]}"
 do
-    sudo pip# install "$app"
+    sudo pip3 install "$app"
 done
 )
 

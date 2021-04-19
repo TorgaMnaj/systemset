@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PYCHARMV=https://download-cf.jetbrains.com/python/pycharm-community-2020.3.1.tar.gz
+PYCHARMV=https://download-cf.jetbrains.com/python/pycharm-community-2020.3.3.tar.gz
 if [ -d /opt/pycharm ]
 then
   echo "
