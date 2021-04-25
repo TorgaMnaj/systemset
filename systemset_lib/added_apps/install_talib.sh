@@ -12,7 +12,9 @@ coreinstall () {
     # Install base ta-lib systemwide (sudo)
     cd /opt || exit 1
     sleep 1s
-    wget http://freefr.dl.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz || wget http://softlayer-ams.dl.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz && tar -xvzf ./*.tar.gz && rm -rf ./*.tar.gz
+    wget http://freefr.dl.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz || wget \
+    http://softlayer-ams.dl.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz && \
+    tar -xvzf ./*.tar.gz && rm -rf ./*.tar.gz
     sleep 1s
     cd ta-lib || exit 1
     ./configure --prefix=/usr

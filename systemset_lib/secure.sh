@@ -8,7 +8,7 @@ Instaling security applications.
   ##### Install software #####
   appsToInstall=(
     clamav clamav-daemon clamdscan clamscan clamtk clamfs clamdtop
-    selinux selinux-utils selinux-basics
+    screenclamav selinux selinux-utils selinux-basics
     setools setools-gui python-setools
     lsat harden harden-doc tiger policycoreutils cryptsetup
     sepol-utils debsecan rkhunter chkrootkit

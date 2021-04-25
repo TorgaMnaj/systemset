@@ -84,3 +84,6 @@ Syntax for changelog:
 --- 1.1.2 - ulozo_downloader included in menu
     Ulozto_downloader included in menu
 
+--- 1.2.0 - Added server post-installs
+    Added complete server post installation menu.
+

@@ -2,7 +2,7 @@
 clear
 echo "
 
-        System update ...
+        System update, upgrade and repair...
 
         "
 

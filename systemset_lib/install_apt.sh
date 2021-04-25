@@ -13,7 +13,7 @@ then
   gnome-calculator gnome-calls gnome-contacts gnome-documents gnome-gmail gnome-logs
   gnome-maps gnome-phone-manager gnome-photos gnome-shell gnome-shell-extension-gsconnect
   gnome-shell-extension-gsconnect-browsers gnome-shell-extension-weather
-  gnome-system-log gnome-todo gnome-tweaks ipscan
+  gnome-system-log gnome-todo gnome-tweaks gnome-shell-extension-gsconnect
   )
   for app in "${appsToInstall[@]}"
   do
@@ -36,10 +36,10 @@ catfish hardinfo gigolo curl lrzip remastersys
 gparted diodon notify-send transmission-gtk vlc chromium-browser
 libminizip1 libre2-3 gcc conky conky-all synaptic
 build-essential cmake autoconf automake pkg-config libtool libzip-dev
-libxml2-dev klavaro deja-dup uget idle bc backupninja
-jq curl shellcheck gdebi ubuntu-report lm-sensors oprofile collectl
+libxml2-dev klavaro deja-dup uget idle bc ipscan
+jq shellcheck gdebi ubuntu-report lm-sensors oprofile collectl
 duc stress youtube-dl net-tools nmap standard-notes everdo
-gnome-shell-extension-gsconnect kanyremote kdeconnect
+kanyremote kdeconnect
 )
 for app in "${appsToInstall[@]}"
 do

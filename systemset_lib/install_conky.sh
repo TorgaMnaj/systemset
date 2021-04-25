@@ -7,7 +7,6 @@ then
   Installing Conky...
 
   "
-  # TODO: odstranit tento modul.
   sudo apt update
   sudo apt upgrade
   sudo apt install -yfm conky conky-all
