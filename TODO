@@ -1,8 +1,4 @@
- --- Change robust busy applications installed via apt to compiled applications.
  --- Before adding PPA ask if its not presented already.
  --- Logging via named FIFO.
- --- Instalace a užití aplikací na lazení systému.
- --- Přeinstalace zkompilovaných aplikací.
  --- Udělat jen místní instance pip3 aplikací
- --- Nějaké scripty jen proběhnou za sekundu bez jakékoliv akce
  --- Předelat uživatele jan na SUDOUSER !

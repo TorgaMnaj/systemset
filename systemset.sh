@@ -64,6 +64,7 @@ CLEAN=clean.sh
 SECURE=secure.sh
 SCAN=scanclam.sh
 INSERVERCORE=install_server_core.sh
+INSLOCALES=install_locales.sh
 # added_apps:
 INSTALIB=added_apps/install_talib.sh
 INSVIRTBOX=added_apps/install_virtualbox.sh
@@ -175,6 +176,7 @@ done
 
 firstrun_server_scripts () {
 sudo bash "$LIBPATH$UPAPT"
+sudo bash "$LIBPATH$CLEAN"
 sudo bash "$LIBPATH$REMAPT"
 sudo bash "$LIBPATH$INSERVERCORE"
 sudo bash "$LIBPATH$INSPYAPT"
@@ -182,7 +184,6 @@ sudo bash "$LIBPATH$INSTALIB"
 sudo bash "$LIBPATH$INSDOCK"
 sudo bash "$LIBPATH$INSMARIADB"
 sudo bash "$LIBPATH$UPAPT"
-sudo bash "$LIBPATH$UPPIP"
 sudo bash "$LIBPATH$CLEAN"
 sudo bash "$LIBPATH$SECURE"
 
@@ -201,7 +202,7 @@ then
     (includes: update system, uninstall unnecesary applications,
     installing server core applications, installing python components,
     installing system wide TaLib, installing docker, cleaning system and
-    securing system. y/n
+    securing system). y/n
     "
     read -r answ
     case $answ in
@@ -265,14 +266,14 @@ do
   echo "
   Choose action:
   a) Update system
-  b) Update python pip and pip3
-  c) Clean system
-  d) Secure system
-  e) Remove unnecesary applications
-  f) Install core applications
-  g) Run whole server system setup
-  h) Enter additional application install menu
-  i) Scanclam and clamdscan system
+  b) Clean system
+  c) Secure system
+  d) Remove unnecesary applications
+  e) Install core applications
+  f) Run whole server system setup
+  g) Enter additional application install menu
+  h) Scanclam and clamdscan system
+  i) Install Czech locales and time synchronization
   q) Quit"
   read -r myanswer
   case $myanswer in
@@ -280,28 +281,28 @@ do
     sudo bash "$LIBPATH$UPAPT"
     ;;
   b|B)
-    sudo bash "$LIBPATH$UPPIP"
-    ;;
-  c|C)
     sudo bash "$LIBPATH$CLEAN"
     ;;
-  d|D)
+  c|C)
     sudo bash "$LIBPATH$SECURE"
     ;;
-  e|E)
+  d|D)
     sudo bash "$LIBPATH$REMAPT"
     ;;
-  f|F)
+  e|E)
     sudo bash "$LIBPATH$INSERVERCORE"
     ;;
-  g|G)
+  f|F)
     firstrun_server_scripts
     ;;
-  h|H)
+  g|G)
     added_apps_install
     ;;
-  i|I)
+  h|H)
     sudo bash "$LIBPATH$SCAN"
+    ;;
+  i|I)
+  sudo bash "$LIBPATH$INSLOCALES"
     ;;
   q|Q)
     final_meassage
@@ -334,7 +335,7 @@ then
     (includes: update system, uninstall unnecesary applications,
     installing favourite applications via APT, installing favourite
     applications via SNAP if presented, installing python components,
-    installing conky, installing pycharm and securing system. y/n
+    installing conky, installing pycharm and securing system). y/n
 
     "
     read -r answ
