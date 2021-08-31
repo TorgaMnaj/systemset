@@ -86,6 +86,10 @@ Syntax for changelog:
 
 --- 1.2.0 - Added server post-installs
     Added complete server post installation menu.
+
 --- 1.2.1 - Added server locales
     Added server locales installation.
+
+--- 1.2.2 - Tweaks
+    Tweaks
 
