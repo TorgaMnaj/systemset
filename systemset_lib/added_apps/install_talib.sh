@@ -29,7 +29,7 @@ coreinstall () {
     "
     sleep 2s
   fi
-   }  2>> "$LOGFILE"
+   }
 
 (
 if [[ ! -d "/usr/local/lib/python3*/dist-packages/talib" ]]

@@ -2,8 +2,9 @@
 
 install() {
   echo "
-Instaling security applications.
-"
+  Instaling security applications.
+  "
+  sleep 3s
   sudo apt-get install -qy --install-suggests ufw
   ##### Install software #####
   appsToInstall=(
@@ -16,9 +17,9 @@ Instaling security applications.
     apparmor apparmor-utils
   )
   for app in "${appsToInstall[@]}"; do
-    sudo apt-get install -qy "$app" 2>>"$LOGFILE"
+    sudo apt-get install -qy "$app"
   done
-  clear
+  sleep 3s
 }
 
 firewallcheck() {
@@ -48,7 +49,7 @@ firewallcheck() {
     #Re-check enable (required):
     sudo ufw enable
     clear
-  ) 2>> "$LOGFILE"
+  )
 }
 
 chrootkitcheck() {
@@ -79,7 +80,7 @@ chrootkitcheck() {
   # sudo gdebi ./Nessus-6.5.3-debian6_amd64.deb
   sudo /etc/init.d/nessusd start
   clear
-) 2>> "$LOGFILE"
+)
 }
 
 els() {
@@ -92,7 +93,7 @@ els() {
       echo -n "Please enter 'y' or 'n': "
       read -r PROCEEDASK
     done
-    ) 2>> "$LOGFILE"
+    )
   }
 
   ## Install a RKHunter cronjob (to run nightly)
@@ -114,7 +115,7 @@ els() {
     else
       sudo apt-get install -yfm rkhunter
     fi
-    ) 2>> "$LOGFILE"
+    )
   }
 
   ## Install a CHKROOTKIT cronjob (to run nightly)
@@ -131,7 +132,7 @@ els() {
     else
       sudo apt-get install -yfm chkrootkit
     fi
-    ) 2>> "$LOGFILE"
+    )
   }
 
   ## Chmod dangerous files only to root
@@ -169,7 +170,7 @@ els() {
       chmod 000 /var/mail/vbox/
       echo "Chmoded /var/mail/vbox/ to 000."
     fi
-    ) 2>> "$LOGFILE"
+    )
   }
 
   adminemail
@@ -192,7 +193,7 @@ lynis() {
   sudo bash lynis audit system -Q
   cd ~ || exit 1
   clear
-  ) 2>>"$LOGFILE"
+  )
 }
 
 install

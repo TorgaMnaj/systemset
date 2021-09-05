@@ -96,3 +96,6 @@ Syntax for changelog:
 --- 1.2.3 - Tweaks and improves
     Improved ulozto-downloader installation, popshell, added rpi imager etc.
 
+--- 1.2.4 - Removing logging
+    Logfile and logging mechanism seems to be broken, being removed. Neccesary new logging mechanism probably via fifo file.
+

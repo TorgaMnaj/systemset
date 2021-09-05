@@ -33,6 +33,7 @@ else
 fi
 
 # logs:
+# TODO: logging háže chyby a nevím proč. Předělat logging přes fifo.
 if [[ ! -d /home/jan/.logs/ ]]
 then
   mkdir /home/jan/.logs/
