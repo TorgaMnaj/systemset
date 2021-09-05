@@ -1,8 +1,15 @@
 #!/bin/bash
 
+sudo apt install -y tor
 sudo pip3 install --upgrade ulozto-downloader
-# install tebsorflow-lite for python3.8
-sudo pip3 install https://github.com/google-coral/pycoral/releases/download/release-frogfish/tflite_runtime-2.5.0-cp38-cp38-linux_x86_64.whl
+# install tensorflow-lite for python3.9
+pip3 install --index-url https://google-coral.github.io/py-repo/ tflite_runtime
+# on debian use for tensorflow lite, this instead:
+# echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
+# curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+# sudo apt-get update
+# sudo apt-get install python3-tflite-runtime
+
 # tkinter
 sudo apt install -y python3-tk
 

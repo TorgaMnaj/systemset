@@ -444,6 +444,7 @@ do
     ;;
   f|F)
     sudo bash "$LIBPATH$INSAPT"
+    sudo bash "$LIBPATH$INSPYAPT"
     ;;
   g|G)
     sudo bash "$LIBPATH$INSSNAP"

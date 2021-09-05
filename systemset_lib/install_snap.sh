@@ -50,6 +50,11 @@ then
   Installing android-studio...
   "
   sudo snap install android-studio
+
+  echo "
+  Installing rpi-imager...
+  "
+  sudo snap install rpi-imager
 fi
 )
 

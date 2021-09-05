@@ -1,4 +1,4 @@
-#!/ibn/bash
+#!/bin/bash
 echo "
 
     Installing Python packages...
@@ -15,6 +15,17 @@ python3-distutils-extra cython3 cython3-dbg
 for app in "${appsToInstall[@]}"
 do
     sudo apt-get install -qy --assume-yes "$app"
+done
+)
+
+# pip3 install system wide packages
+(
+appsToInstall=(
+pysensors
+)
+for app in "${appsToInstall[@]}"
+do
+    sudo -u jan pip3 install "$app"
 done
 )
 

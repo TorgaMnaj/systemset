@@ -93,3 +93,6 @@ Syntax for changelog:
 --- 1.2.2 - Tweaks
     Tweaks
 
+--- 1.2.3 - Tweaks and improves
+    Improved ulozto-downloader installation, popshell, added rpi imager etc.
+
