@@ -10,8 +10,8 @@ echo "
 appsToInstall=(
 automake autoconf cmake build-essential cmakeautoconf
 cython3 tree htop curl ipscan net-tools
-git ssh openssh-client openssh-server htop
-nano vlc geany wget screen tmux ntp
+git ssh openssh-client openssh-server
+nano wget screen tmux ntp
 )
 
 for app in "${appsToInstall[@]}"

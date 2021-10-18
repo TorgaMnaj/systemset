@@ -1,5 +1,4 @@
 #!/bin/bash
-LOGFILE=/home/jan/.logs/systemset.log
 
 coreinstall () {
   if [[ ! -d /usr/local/lib/ta-lib ]]

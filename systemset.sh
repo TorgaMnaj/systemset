@@ -139,9 +139,10 @@ do
   a|A)
     echo "
 
-    Running server tasks.
+    Running desktop tasks.
 
     "
+    sleep 1s
     firstrun_case
     run_case
     clear
@@ -151,7 +152,7 @@ do
   b|B)
     echo "
 
-    Running desktop tasks.
+    Running server tasks.
 
     "
     clear
@@ -181,13 +182,9 @@ sudo bash "$LIBPATH$CLEAN"
 sudo bash "$LIBPATH$REMAPT"
 sudo bash "$LIBPATH$INSERVERCORE"
 sudo bash "$LIBPATH$INSPYAPT"
-sudo bash "$LIBPATH$INSTALIB"
-sudo bash "$LIBPATH$INSDOCK"
-sudo bash "$LIBPATH$INSMARIADB"
 sudo bash "$LIBPATH$UPAPT"
 sudo bash "$LIBPATH$CLEAN"
 sudo bash "$LIBPATH$SECURE"
-
 }
 
 

@@ -7,7 +7,7 @@ then
   "
   cd /opt || exit 1
   sudo apt install node-typescript make git
-  sudo git clone https://github.com/pop-os/shell
+  sudo git clone https://github.com/pop-os/shell.git
   cd shell || exit 1
   sudo make local-install
   cd .. || exit 1
